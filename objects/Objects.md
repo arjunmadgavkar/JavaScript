@@ -77,32 +77,34 @@ function increaseValue() {
 
 ## Sharing Pure Functions
 
-You should use pure functions when you can. A pure function is a function that when given the same input will always return the same output. In other words, there is nothing outside of that one function that influences the output. For example, the first function below is pure and the following functions are impure:
+You should use pure functions when you can. A pure function is a function that has no side effects and when it's given the same input it always return the same output (read more [here](../functions/Functions.md)). Here is an example of 2 objects sharing a pure function:
 ```js
-// Pure
-function pureDouble(x) {
-    return 2 * x; 
-}
-// Impure
-function impure1(someDate) {
-    // Date() is always changing, which means that the same input of someDate will produce different outputs, so not pure
-    if (Date() === someDate) {
-        return true;
+// Sharing pure functions between objects
+function Pure1(value) {
+    this.value = value;
+    this.printValue = function(){
+        console.log("I'm an Pure1 and my value is " + this.value);
     }
-    return false;
-}
-function impure2(someObject, value) {
-    // someObject is defined outside of this function, so if you change its value outside of this function, then the output will change. That violates our definition of a pure function.
-    if (someObject.value === value) {
-        return true;
+    this.increaseValue = function(valueToIncreaseBy) {
+        this.value = increaseValue(this.value, valueToIncreaseBy);
     }
-    return false;
+}
+function Pure2(value) {
+    this.value = value;
+    this.printValue = function(){
+        console.log("I'm an Pure1 and my value is " + this.value);
+    }
+    this.increaseValue = function(valueToIncreaseBy) {
+        this.value = increaseValue(this.value, valueToIncreaseBy);
+    }
+}
+function increaseValue(originalValue, valueToIncreaseBy) {
+    return originalValue + valueToIncreaseBy;
 }
 ```
 
-This makes it really easy to debug errors as you only have to look at the function that is being called. It also avoids shared state.
 
-Here's an example:
+
 
 
 
