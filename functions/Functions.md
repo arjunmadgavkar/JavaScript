@@ -128,3 +128,31 @@ noRequest();
 ```
 This is the exact same thing! A callback is just a function that takes another function as a parameter so it can do a bunch of operations before calling that function. People like to be fancy and define it in-line, but it can be defined anywhere!
 
+
+# Declarative vs. Imperative Functions
+The [glossary](../glossary/Glossary.md#Declarative-Programming) explains the declarative paradigm versus the imperative one. Here we're going to go through a quick example of 2 functions that result in the same output, but the first function is imperative and the second one is declarative.
+
+Let's look at the imperative function first:
+```js
+function imperativeDouble(arr) {
+    let res = [];
+    for (let i = 0; i < arr.length; i++) {
+        res.push(arr[i] * 2);
+    }
+    return res;
+}
+```
+There are 3 things to note here:
+1. We are explicitly telling the computer how to double the values in the array by using a for loop and then doing arithmetic on each value. 
+2. We are constantly changing a part of the program's state by creating the `res` array and continuously modifying it. 
+3. The code isn't that readable. You have to step through it to understand what's going on.
+
+Now let's look at the declarative approach to doubling the values in an array:
+```js
+function declarativeDouble(arr) {
+    return arr.map((item) => item * 2);
+}
+```
+As you can see, we're using JavaScript's `.map` function to double each value in the array. Therefore, the declarative approach is using JavaScript's imperative approach. More generally, declarative approaches often take advantage of abstracted imperative approaches.
+
+[This](https://tylermcginnis.com/imperative-vs-declarative-programming/) is a good online resource for more information.
