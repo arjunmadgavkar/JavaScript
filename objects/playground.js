@@ -113,3 +113,16 @@ pure2.increaseValue(500);
 pure1.printValue();
 pure2.printValue();
 console.log();
+
+// Object.assign
+function assignObject() {
+    let source = { a: 5, c: 5 };
+    let target = { a: 10, b: 10, c: 10 };
+    Object.assign(target, source);
+    console.log(JSON.stringify(target));
+}
+console.log("-----------------------------------------------------");
+console.log("Using Object.assign()");
+console.log("-----------------------------------------------------");
+assignObject();
+console.log();

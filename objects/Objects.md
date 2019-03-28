@@ -110,3 +110,14 @@ function increaseValue(originalValue, valueToIncreaseBy) {
 
 
 
+
+# Object.assign()
+This method copies values from source object to target object. Let's look at an example:
+```js
+let source = { a: 5, c: 5 };
+let target = { a: 10, b: 10, c: 10 };
+Object.assign(target, source);
+console.log(JSON.stringify(target)); // { a: 5, b: 10, c: 5 }
+```
+As you can see here, the first argument is the target object that is going to be modified and the second argument is the source object that is doing the modifying. We are going to take the source object values and put them into the target value. This means that we will overwrite the properties that have the same names, but we don't remove properties that arleady existed in the target object (even if they didn't exist the source object).
+
