@@ -1,4 +1,6 @@
-# API Lingo
+# Web Lingo
+## Provider
+* Defintion: A **provider** provides data to a part of a web application. **Providers** should be pluggable components.
 ## Third Party Vendor
 * Definition: A **third party vendor** is any company/organization external to your company that provides a product/service your company uses. 
 * Spoken example:
@@ -75,6 +77,50 @@ Below is one more schema to drive home the point. As you can see, the key value 
 }
 ```
 # Other
+## Resolve
+* Definition: **Resolving** a variable means that assigning a variable to a certain value. **Resolution** happens once a variable has a certain value ([link](https://www.revolvy.com/page/Name-resolution-%28programming-languages%29)).
+* Spoken examples:
+  * The variable `sum` **resolves** to the sum of the three numbers that are passed as arguments.
+  * In your `package.json` file the `griffin` package resolves to the latest version, which is not stable.
+## Literals
+* Definition: **Literals** are values that are assigned to [identifiers](#Identifier). For example `"hi"` in the following assignment `let str = "hi"` is a string **literal.** This is clearly different than assigning `str` to another variable. You're assigning it to a fixed value, which is a **string literal.** There are also array literals, object literals, and more ([link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Literals)).
+* Spoken examples:
+  * You shouldn't be assigning your variable `str` to another variable. Instead, create `str` and use a **string literal.**
+  * Create an **object literal** and set the object's name using a **string literal.**
+  * Interpolating **string literals** is really easy in JavaScript!
+* Code examples:
+```js
+const arjun = {
+  name: "Arjun",
+  age: 24
+} // arjun is an object literal
+const val = "hey!" // val is a string literal
+```
+## Identifier
+* Definition: **Identifiers** are names given to variables, functions, or properties. In other words, **identifiers** identify certain variables, functions, or properties. **Identifiers** allow us to refer to a certain object, variable, function, etc. in a program ([link](https://stackoverflow.com/questions/28185877/difference-between-identifier-and-variable-in-javascript)).
+* Spoken examples:
+  * You should choose a different **identifier** for that object as the one you've chosen isn't clear.
+  * Why are using that **identifier**? It is a reserved keyword, so you can't use it.
+  * I should have chosen a shorter **identifier**, this one takes forever to write out by hand!
+* Code examples:
+```js
+let arjun = new Person("Arjun"); // arjun is an identifier. It identifies an object.
+let x = 1; // x is an identifier. It identifies a variable.
+let test = function() {
+  return 1;
+} // test is an identifier. It identifies a function.
+```
+## Binding
+* Defintion: A **binding** is simply what a name refers to. In other words, a **binding** determines which variable an [identifier](#identifier) refers to in a given scope ([link](https://stackoverflow.com/questions/39259729/javascript-reference-vs-binding-whats-the-difference)).
+* Spoken examples:
+  * The array `testArr` is `bound` to the 5 values you assigned to it when you created it.
+  * Import statements **bind** identifiers to objects defined in other classes.
+* Code examples:
+```js
+// This import statement binds Griffin to the Griffin class defined in the "griffin-paypal" file
+import { Griffin } from "./griffin-paypal"
+let myObj = new Griffin("en-US");
+```
 ## Canonical
 * Defintion: Canonical form is used when talking about data that could be represented in a few different ways, but one of those ways is preferred ([link](https://stackoverflow.com/questions/280107/what-does-the-term-canonical-form-or-canonical-representation-in-java-mean)). In other words, the **canonical form** is the standard way of representing something like data.
 * Spoken examples:
@@ -89,3 +135,8 @@ myFile.txt                                   # in current working dir
 /apps/tomcat/conf/myFile.txt                 # absolute path using symbolic links
 /u1/local/apps/tomcat-5.5.1/conf/myFile.txt  # absolute path with no symlinks
 ```
+# Functions
+## Invoke
+* Definition: When a function is **invoked** it is called automatically rather than explicitly. For example, a constructor is invoked when you create an object of a certain class. However, if you have a line of code that explicitly calls a method (such as `myObj.sum()`) then you are calling the `sum` method rather than invoking it.
+* Spoken examples: 
+  * When you create that object its constructor is **invoked.**
