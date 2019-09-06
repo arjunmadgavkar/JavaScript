@@ -70,3 +70,29 @@ export default class Main {
   // ....
 }
 ```
+
+# Strict Mode
+Strict Mode is something that JavaScript provides to throw exceptions if a part of a program looks unsafe ([source](https://stackoverflow.com/questions/1335851/what-does-use-strict-do-in-javascript-and-what-is-the-reasoning-behind-it)).
+
+# AST
+An **Abstract Syntax Tree** (or AST) is created after a program is fed to a compiler. The compiler generates this AST as a way to understand the program and its different parts. For example, this tree will show the different conditionals in the source code such as `while loops` and `if statements`. It's quite easy to follow this tree and get an understanding of how the program works. Sources: [JavaScript AST](https://medium.com/@jotadeveloper/abstract-syntax-trees-on-javascript-534e33361fc7), [Wikipedia](https://en.wikipedia.org/wiki/Abstract_syntax_tree).
+
+# Memory Management
+JavaScript is single-threaded and uses Google's V8 Engine, which allocates space in your computer for a memory heap and a call stack. JavaScript Engines are either interpreters or compilers (the difference being that interpreters execute the program in the source language rather than translating it to machine code). The V8 engine is a compiler that compiles JavaScript into machine code.
+
+Since JavaScript is single-threaded, there is only 1 call stack. The next function that will be executed is at the top of the stack. Once it is executed, it is popped off of the stack. The problem is that the browser cannot do anything else until the function at the top of the stack is finished executing, which can lead to mega delays if that function takes a long time. That's why JavaScript relies heavily on asynchronous callback functions.
+
+With regards to garbage collection, the V8 engine uses mark and sweep.
+
+Before a program is compiled, the compiler reads through the source code and determines how much space the primitives require. The compiler then talks to the operating system, which gives it that much space on the call stack. Each function gets its own part of the call stack where it stores all of its primitives.
+
+However, if we don't know how much memory an object will need then we are going to ask the operating system for heap space. For example, if we are creating an object from user input.
+
+The differences between static (stack) and dynamic (heap) allocation can be summarized as follows:
+* Size must be known at compile time for static allocation and size will be unknown at compile time for dynamic allocation
+* Static allocation is performed at compile time, dynamic allocation is performed at run time
+* Static allocation is assigned to stack, dynamic is assigned to heap
+* Static is FILO (first in, last out), dynamic has no order
+
+[Source](https://blog.sessionstack.com/how-javascript-works-memory-management-how-to-handle-4-common-memory-leaks-3f28b94cfbec).
+

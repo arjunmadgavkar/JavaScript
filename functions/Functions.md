@@ -156,3 +156,4 @@ function declarativeDouble(arr) {
 As you can see, we're using JavaScript's `.map` function to double each value in the array. Therefore, the declarative approach is using JavaScript's imperative approach. More generally, declarative approaches often take advantage of abstracted imperative approaches.
 
 [This](https://tylermcginnis.com/imperative-vs-declarative-programming/) is a good online resource for more information.
+

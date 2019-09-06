@@ -76,6 +76,11 @@ Below is one more schema to drive home the point. As you can see, the key value 
   "required": [ "productId" ]
 }
 ```
+# Functions
+## Invoke
+* Definition: When a function is **invoked** it is called automatically rather than explicitly. For example, a constructor is invoked when you create an object of a certain class. However, if you have a line of code that explicitly calls a method (such as `myObj.sum()`) then you are calling the `sum` method rather than invoking it.
+* Spoken examples: 
+  * When you create that object its constructor is **invoked.**
 # Other
 ## Resolve
 * Definition: **Resolving** a variable means that assigning a variable to a certain value. **Resolution** happens once a variable has a certain value ([link](https://www.revolvy.com/page/Name-resolution-%28programming-languages%29)).
@@ -135,8 +140,20 @@ myFile.txt                                   # in current working dir
 /apps/tomcat/conf/myFile.txt                 # absolute path using symbolic links
 /u1/local/apps/tomcat-5.5.1/conf/myFile.txt  # absolute path with no symlinks
 ```
-# Functions
-## Invoke
-* Definition: When a function is **invoked** it is called automatically rather than explicitly. For example, a constructor is invoked when you create an object of a certain class. However, if you have a line of code that explicitly calls a method (such as `myObj.sum()`) then you are calling the `sum` method rather than invoking it.
-* Spoken examples: 
-  * When you create that object its constructor is **invoked.**
+## Primitive (data type)
+* Definition: a primitive is data that is not an object, has no methods, and is immutable. The variable is not a primitive, rather the data that the variable points to is of a primitive type. In JavaScript, the primitives data types are `String`, `Number`, `Boolean`, `Null`, `Undefined`, and `Symbol` ([source](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)).
+* Spoken examples:
+  * Is that a primitive?
+  * The compiler handles primitives that way.
+* Code example:
+```js
+// Using a string method doesn't mutate the string
+var bar = "baz";
+console.log(bar);               // baz
+bar.toUpperCase();
+console.log(bar);               // baz
+
+// Assignment gives the primitive a new (not a mutated) value
+bar = bar.toUpperCase();       // BAZ
+```
+
